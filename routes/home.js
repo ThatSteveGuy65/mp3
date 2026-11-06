@@ -229,7 +229,7 @@ function sendError(res, status, message) {
             deletedUser = user;
         });
 
-        return sendSuccess( res, 200, 'User deleted successfully',deletedUser);
+        return res.status(204).end();
 
     } catch (err) {
 
@@ -885,12 +885,7 @@ router.delete('/tasks/:id', async function (req, res) {
             deletedTask = task;
         });
 
-        return sendSuccess(
-            res,
-            200,
-            'Task deleted successfully',
-            deletedTask
-        );
+        return res.status(204).end();
 
     } catch (err) {
 
